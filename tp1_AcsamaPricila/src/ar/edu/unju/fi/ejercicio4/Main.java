@@ -10,16 +10,21 @@ public class Main {
 		System.out.println("ingrese un numero entero: ");
 		int num = scanner.nextInt();
 		
-		if (num < 0 && num > 10) {
-			System.out.println("ingrese un valor entre 1 y 10");
-			
-	}else { //el valor es entre 1 y 10;
+		while (num < 0 || num > 10) {
+			System.out.println("Debe ingresar un numero entre 0 y 10:");
+			num = scanner.nextInt();
+		}
+		//CALCULA EL FACTORIAL DE NUM;
+		int fact = 1;
+		int i = num;
 		
-		
-			
+		while(i > 0) {
+			fact = fact * i;
+			i--;
 		}
 		
-	
+		System.out.println("el factorial de " + num + " es " + fact);
+		
 		scanner.close();
 	}
 
